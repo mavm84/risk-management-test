@@ -1,0 +1,64 @@
+<div class="container">
+
+    <div class="card mt-3 p-4">
+
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Tabla de gestion de riesgo</h2>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col"></div>
+            <div class="col-md-2">
+                <h6 class="bold">Capital</h6>
+                <div class="input-wrapper">
+                    <input class="form-control" [(ngModel)]="accountBalance" placeholder="Balance">
+                    <span class="suffix">USD</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h6 class="bold">Porcentaje de riesgo</h6>
+                <div class="input-wrapper">
+                    <input class="form-control" [(ngModel)]="percentageRisk" type="number" placeholder="Porcentaje de riesgo">
+                    <span class="suffix">%</span>
+                </div>
+            </div>
+            <div class="col-md-2 button-container">
+                <button [disabled]="accountBalance <= 0 || percentageRisk <= 0" class="btn btn-primary w-100" (click)="calculateLotSizes()">Calcular</button>
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <table *ngIf="showData" class="mt-4">
+            <tr class="table-header">
+                <th class="first-col"></th>
+                <th class="first-row" colspan="4">Velas SL</th>
+            </tr>
+            <tr class="table-header">
+                <th class="first-col">Indice</th>
+                <th>8</th>
+                <th>10</th>
+                <th>12</th>
+                <th>14</th>
+            </tr>
+            <tr *ngFor="let row of indexesData">
+                <td class="index-col">{{ row.name }}</td>
+                <td *ngFor="let value of row.values">{{ value  | number: '1.2-2'}}</td>
+            </tr>
+        </table>
+
+        <div class="row mt-3">
+            <div class="col"></div>
+            <div class="col-md-2">
+                <span class="risk-legend">* Riesgo aproximado por entrada:</span>
+                <div class="input-wrapper">
+                    <input disabled class="form-control" [(ngModel)]="risk">
+                    <span class="suffix">USD</span>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+</div>
