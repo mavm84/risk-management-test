@@ -2,47 +2,53 @@ table {
     border: 1px solid #ccc;
     margin: auto;
     width: fit-content;
+}
 
-    .table-header {
-        background-color: #b5c6de;
-        font-weight: bold;
-        height: 34px;
-    }
+.table-header {
+    background-color: #b5c6de;
+    font-weight: bold;
+    height: 34px;
+}
 
-    .first-col {
-        width: 120px;
-    }
+.first-col {
+    width: 120px;
+}
 
-    .index-col {
-        font-weight: bold;
-    }
+.index-col {
+    font-weight: bold;
+}
 
-    :is(th) {
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
-    th.first-row {
-        text-align: center !important;
-    }
-    th.first-col {
-        background-color: #f5f5f5;
-    }
-    th:not(.first-col) {
-        text-align: center;
-        width: 100px;
-        border-top: none;
-    }
-    td:not(.index-col) {
-        text-align: end;
-    }
-    td.index-col {
-        border: 1px solid #ccc;
-        background-color: #f5f5f5;
-    }
-    td {
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
+:is(th) {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th.first-row {
+    text-align: center !important;
+}
+
+th.first-col {
+    background-color: #f5f5f5;
+}
+
+th:not(.first-col) {
+    text-align: center;
+    width: 100px;
+    border-top: none;
+}
+
+td:not(.index-col) {
+    text-align: end;
+}
+
+td.index-col {
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 .button-container {
@@ -52,26 +58,4 @@ table {
 .risk-legend {
     font-size: 10px;
     font-weight: 600;
-}
-
-.input-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.input-wrapper .form-control {
-    padding-right: 40px;
-    /* Adjust based on the width of the suffix */
-}
-
-.input-wrapper .suffix {
-    position: absolute;
-    right: 10px;
-    /* Adjust based on desired spacing */
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    /* Ensure the suffix does not interfere with input */
-    color: #999;
-    /* Optional: style the suffix */
 }
